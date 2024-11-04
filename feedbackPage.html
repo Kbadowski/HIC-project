@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mini Recipe Book</title>
+    <style>
+
+        .header {
+            float: none;
+            padding: 10px;
+            height: 100px;
+            width: 1500px;
+        }
+
+        .navbar {
+            float: none;
+            position: absolute;
+            top: 20%;
+            left: 35%;
+            border: solid;
+            border-color: gainsboro;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: coral;
+                text-align: center;
+                text-decoration: none;
+                font-size: 17px;
+                padding: 14px 20px;
+            }
+
+                .navbar a:hover {
+                    background-color: lightpink;
+                    color: black;
+                }
+
+                .navbar a.active {
+                    background-color: darksalmon;
+                    color: black;
+                }
+
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            float: none;
+            position: absolute;
+            left: 35%;
+        }
+
+        .searchbar {
+            float: none;
+            position: absolute;
+            width: 500px;
+            height: 25px;
+            left: 34%;
+            top: 7%;
+        }
+
+        .title {
+            float: none;
+            left: 30%;
+            top: 7%;
+        }
+
+        .button {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+
+        <!-- Website name -->
+        <h1 class="title" style="font-family:Broadway;">Online Recipes!</h1>
+
+        <!-- Website Logo -->
+        <img src="images/cookBook.png" style="width: 110px; height: 110px;" />
+
+        <!-- Search Bar -->
+        <input type="text" placeholder="Find a recipe you like..." class="searchbar" />
+
+        <!-- Login button -->
+        <div class="button" style="float: right;">
+            <button><img src="images/usericon.png" class="button" /></button>
+            <button><img src="images/favoritesIcon.png" class="button" /></button>
+        </div>
+    </div>
+    <!-- Nav Bar -->
+    <div class="navbar">
+        <a href="homePage.html">Home</a>
+        <a href="trendingPage.html">Trending</a>
+        <a href="ingredientsPage.html">My Ingredients</a>
+        <a href="postNewRecipePage.html">Post Recipe</a>
+    </div>
+
+    <h1>Feedback Page!</h1>
+    <!-- Start code here -->
+</body>
+</html>
