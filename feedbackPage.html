@@ -90,6 +90,31 @@
             left: 15px;
             z-index: -1;
         }
+
+        .backArrow {
+            position: absolute;
+            left: 30px;
+            top: 140px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .recipeName {
+            position: absolute;
+            width: 400px;
+            height: 25px;
+            left: 300px;
+            top: 275px;
+        }
+
+        .recipeFeedback {
+            position: absolute; 
+            width: 800px;
+            height: 300px;
+            left: 300px;
+            top: 325px;
+        }
+
     </style>
 </head>
 <body>
@@ -141,6 +166,24 @@
         <a href="postNewRecipePage.html">Post Recipe</a>
     </div>
 
-    <!-- Start code here -->
+
+    <div>
+        <!-- Go To Previous Page -->
+        <a href="recipePage.html">
+            <img src="images/returnButton.png" class="backArrow" />
+        </a>
+        <!-- Heading -->
+        <h1 style="font-family: 'Californian FB'; position: absolute; top: 200px; left: 615px;">Give Us Your Feedback!</h1>
+    </div>
+
+    <!-- Recipe Title Input Box -->
+    <input type="text" placeholder="Recipe Name" class="recipeName" />
+
+    <!-- Recipe Star Rating -->
+    <!-- Recipe Feedback Input Box -->
+    <textarea rows="6" cols="10" class="recipeFeedback"> Tell us about your experience...</textarea>
+
+    <!-- Submit Feedback Button -->
+
 </body>
 </html>
