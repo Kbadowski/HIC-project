@@ -172,18 +172,34 @@
         <a href="recipePage.html">
             <img src="images/returnButton.png" class="backArrow" />
         </a>
-        <!-- Heading -->
-        <h1 style="font-family: 'Californian FB'; position: absolute; top: 200px; left: 615px;">Give Us Your Feedback!</h1>
     </div>
 
-    <!-- Recipe Title Input Box -->
-    <input type="text" placeholder="Recipe Name" class="recipeName" />
+    <div id="feedback">
+        <!-- Heading -->
+        <h1 style="font-family: 'Californian FB'; position: absolute; top: 200px; left: 615px;">Give Us Your Feedback!</h1>
 
-    <!-- Recipe Star Rating -->
-    <!-- Recipe Feedback Input Box -->
-    <textarea rows="6" cols="10" class="recipeFeedback"> Tell us about your experience...</textarea>
+        <!-- Recipe Title Input Box -->
+        <input type="text" placeholder="Recipe Name" class="recipeName" />
 
-    <!-- Submit Feedback Button -->
+        <!-- Recipe Star Rating -->
+        <!-- Recipe Feedback Input Box -->
+        <textarea rows="6" cols="10" class="recipeFeedback"> Tell us about your experience...</textarea>
+        <button onclick="feedBackSent()" style="position: absolute; top: 650px; left: 1000px;">Send Feedback</button>
+    </div>
+
+    <div id="complete" hidden>
+        <h1 style="font-family: 'Californian FB'; position: absolute; top: 300px; left: 700px;">Thank You!</h1>
+        <button style="position: absolute; top: 400px; left: 717px;"><a href="recipePage.html"</a>Go Back To Recipe</button>
+    </div>
+    
+    <!-- Submit Feedback Button Action //hide feedback and display completion text -->
+    <script>
+        function feedBackSent() {
+            document.getElementById("feedback").style.display = "none";
+            document.getElementById("complete").style.display = "block";
+        }
+
+    </script>
 
 </body>
 </html>

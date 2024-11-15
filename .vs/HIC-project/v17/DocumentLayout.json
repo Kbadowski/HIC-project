@@ -3,11 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\kaila\\source\\repos\\HIC-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kaila\\source\\repos\\HIC-project\\trendingPage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:trendingPage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kaila\\source\\repos\\trendingPage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kaila\\source\\repos\\HIC-project\\feedbackPage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:feedbackPage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,29 +17,20 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "trendingPage.html",
-              "DocumentMoniker": "C:\\Users\\kaila\\source\\repos\\trendingPage.html",
-              "RelativeDocumentMoniker": "..\\trendingPage.html",
-              "ToolTip": "C:\\Users\\kaila\\source\\repos\\trendingPage.html",
-              "RelativeToolTip": "..\\trendingPage.html",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAAAJIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-08T15:21:45.763Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "trendingPage.html",
-              "DocumentMoniker": "C:\\Users\\kaila\\source\\repos\\HIC-project\\trendingPage.html",
-              "RelativeDocumentMoniker": "trendingPage.html",
-              "ToolTip": "C:\\Users\\kaila\\source\\repos\\HIC-project\\trendingPage.html",
-              "RelativeToolTip": "trendingPage.html",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAqwJIAAAAAAAAA",
+              "Title": "feedbackPage.html",
+              "DocumentMoniker": "C:\\Users\\kaila\\source\\repos\\HIC-project\\feedbackPage.html",
+              "RelativeDocumentMoniker": "feedbackPage.html",
+              "ToolTip": "C:\\Users\\kaila\\source\\repos\\HIC-project\\feedbackPage.html",
+              "RelativeToolTip": "feedbackPage.html",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAAALUAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-08T15:10:26.411Z",
+              "WhenOpened": "2024-11-08T19:54:08.679Z",
               "EditorCaption": ""
             }
           ]
