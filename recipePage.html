@@ -68,7 +68,7 @@
         }
 
         ul, ol {
-            margin: 0; 
+            margin: 5px; 
             padding-left: 20px;
         }
 
@@ -109,8 +109,24 @@
             left: 15px;
             z-index: -1;
         }
+
+        .dottedBox {
+            border: 2px dotted;
+            padding: 20px;
+            margin: 20px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <div class="header">
@@ -159,71 +175,79 @@
         <a href="postNewRecipePage.html">Post Recipe</a>
     </div>
     <br />
+
+    <!-- Recipe -->
     <div id="recipe-container">
         <h1 id="recipeTitle"></h1>
         <img id="recipePhoto" alt="Recipe Photo" />
         <h2>General Info</h2>
-        <!-- Figure out General Info Logic -->
+        <div class="dottedBox" id="generalInfo"></div>
         <h2>Ingredients</h2>
         <ul id="ingredientsList"></ul>
         <h2>Steps</h2>
         <ol id="stepsList"></ol>
         <h2>Nutrition Info</h2>
-        <!-- Figure out Nutrition Info Box -->
+        <div class="dottedBox" id="nutritionList"></div>
     </div>
 
     <!-- Scripting -->
     <script>
-        const recipe = {
-            title: "Buttered Noodles",
-            photo: "images/butteredNoodle.webp",
-            generalInfo: ["Prep Time: 5 Mins", "Cook Time: 15 Mins", 
-                          "Total Time: 20 Mins", "Servings: 8"],
+        document.addEventListener("DOMContentLoaded", function() {
+            const recipe = {
+                title: "Buttered Noodles",
+                photo: "images/butteredNoodle.webp",
+                generalInfo: ["Prep Time: 5 Mins", "Cook Time: 15 Mins", 
+                              "Total Time: 20 Mins", "Servings: 8"],
 
-            ingredients: ["16 ounce package of fettuccine noodles", 
-                          "6 tablespoons of Unsalted Butter, cut into pieces", 
-                          "1/3 cup of grated Parmesan Cheese (optional)",
-                          "Salt", "Pepper"],
+                ingredients: ["16 ounce package of fettuccine noodles", 
+                              "6 tablespoons of Unsalted Butter, cut into pieces", 
+                              "1/3 cup of grated Parmesan Cheese (optional)",
+                              "Salt", "Pepper"],
 
-            steps: ["Fill a large pot with lightly salted water and bring to a boil",
-                    "Stir in fettuccine, bring back to a boil, and cook pasta over medium heat for 8-10 minutes",
-                    "Drain and return pasta to pot. Mix butter, Parmesan cheese, salt, and pepper into pasta until evenly combined.", 
-                    "Serve and enjoy!"],
+                steps: ["Fill a large pot with lightly salted water and bring to a boil",
+                        "Stir in fettuccine, bring back to a boil, and cook pasta over medium heat for 8-10 minutes",
+                        "Drain and return pasta to pot. Mix butter, Parmesan cheese, salt, and pepper into pasta until evenly combined.", 
+                        "Serve and enjoy!"],
 
-            nutritionInfo: ["294 Calories", "11g Fat", "41g Carbs", "9g Protein"],
-        };
+                nutritionInfo: ["294 Calories", "11g Fat", "41g Carbs", "9g Protein"],
+            };
 
-        document.getElementById('recipeTitle').textContent = recipe.title;
-        document.getElementById('recipePhoto').src = recipe.photo;
-        
-        const generalInfoList = document.getElementById('generalInfo');
-        recipe.generalInfo.forEach(infoPiece => {
-            const li = document.createElement('li');
-            li.textContent = infoPiece;
-            generalInfoList.appendChild(li);
-        });
+            console.log("Recipe object:", recipe);
 
-        const ingredientsList = document.getElementById('ingredientsList');
-        recipe.ingredients.forEach(ingredient => {
-            const li = document.createElement('li');
-            li.textContent = ingredient;
-            ingredientsList.appendChild(li);
-        });
+            document.getElementById('recipeTitle').textContent = recipe.title;
+            document.getElementById('recipePhoto').src = recipe.photo;
 
-        const stepsList = document.getElementById('stepsList');
-        recipe.steps.forEach(step => {
-            const li = document.createElement('li');
-            li.textContent = step;
-            stepsList.appendChild(li);
-        });
+            const generalInfoList = document.getElementById('generalInfo');
+                recipe.generalInfo.forEach(infoPiece => {
+                const li = document.createElement('li');
+                li.textContent = infoPiece;
+                generalInfoList.appendChild(li);
+            });
 
-        const nutritionList = document.getElementById('nutritionList');
-        recipe.nutritionInfo.forEach(fact => {
-            const li = document.createElement('li');
-            li.textContent = fact; 
-            nutritionList.appendChild(li);
-        });
+            const ingredientsList = document.getElementById('ingredientsList');
+                recipe.ingredients.forEach(ingredient => {
+                console.log("Ingredient: ", ingredient);
+                const li = document.createElement('li');
+                li.textContent = ingredient;
+                ingredientsList.appendChild(li);
+                console.log(ingredientsList);
+            });
 
+            const stepsList = document.getElementById('stepsList');
+                recipe.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                stepsList.appendChild(li);
+            });
+
+            const nutritionList = document.getElementById('nutritionList');
+                recipe.nutritionInfo.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact; 
+                nutritionList.appendChild(li);
+            });
+
+});
     </script>
 </body>
 </html>
