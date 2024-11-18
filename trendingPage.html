@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -90,6 +90,69 @@
             left: 15px;
             z-index: -1;
         }
+
+        .recipe-section {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 20px;
+        margin-bottom: 40px;
+        margin: 0 auto;
+        max-width: calc(100% - 2in);
+        }
+
+        .recipe-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 20px;
+        }
+
+        .recipe-item img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+
+        .recipe-info {
+        display: flex;
+        flex-direction: column;
+        }
+
+        .recipe-info h2 {
+        margin: 0;
+        font-size: 1.5em;
+        }
+
+        .trending {
+        color: coral;
+        font-weight: bold;
+        margin-top: 5px;
+        }
+
+        .stars {
+        display: flex;
+        gap: 5px;
+        }
+
+        .stars span {
+        color: coral;
+        font-size: 1.2em;
+        }
+
+        .stars span.grey {
+        color: lightgray;
+        }
+
+        .grid-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 0 auto;
+        max-width: calc(100% - 2in);
+        margin-top: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -140,7 +203,59 @@
         <a href="postNewRecipePage.html">Post Recipe</a>
     </div>
 
-    <h1>Trending Page!</h1>
+    <h1 align="center" style="margin-top: 100px;">Deck the halls with these trending recipes!</h1>
+
     <!-- Start code here -->
+
+    <!-- #1 trending recipe -->
+  <div class="recipe-section">
+    <div>
+      <img src="C:\Users\klric\Downloads\cookie-placeholder.jpg" style="width: 130px; height: 130px;">
+    </div>
+    <div class="recipe-info">
+      <h2>Recipe Name</h2>
+      <span class="trending">#1 in Trending</span>
+      <p>
+        Enter recipe description here
+      </p>
+      <div class="stars">
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+        <span>★</span>
+        <span class="grey">★</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other recipes -->
+  <div class="grid-row">
+    <div class="recipe-item">
+      <img src="C:\Users\klric\Downloads\cookie-placeholder.jpg" style="width: 90px; height: 90px;">
+      <div class="recipe-info">
+        <h3>Recipe Name</h3>
+        <div class="stars">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span class="grey">★</span>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-item">
+      <img src="C:\Users\klric\Downloads\cookie-placeholder.jpg" style="width: 90px; height: 90px;">
+      <div class="recipe-info">
+        <h3>Recipe Name</h3>
+        <div class="stars">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span class="grey">★</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
