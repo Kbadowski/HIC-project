@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mini Recipe Book</title>
+    <style>
+
+        .header {
+            float: none;
+            padding: 10px;
+            height: 100px;
+            width: 1500px;
+        }
+
+        .leftHeader {
+            float: left;
+            left: auto;
+        }
+
+        .navbar {
+            float: none;
+            position: absolute;
+            top: 20%;
+            left: 35%;
+            border: solid;
+            border-color: gainsboro;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: coral;
+                text-align: center;
+                text-decoration: none;
+                font-size: 17px;
+                padding: 14px 20px;
+            }
+
+                .navbar a:hover {
+                    background-color: lightpink;
+                    color: black;
+                }
+
+                .navbar a.active {
+                    background-color: darksalmon;
+                    color: black;
+                }
+
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #recipe-container {
+            background: white; 
+            padding: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 40px auto 0; 
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        ul, ol {
+            margin: 5px; 
+            padding-left: 20px;
+        }
+
+        .center {
+            float: none;
+            position: absolute;
+            left: 35%;
+        }
+
+        .searchbar {
+            float: none;
+            position: absolute;
+            width: 500px;
+            height: 25px;
+            left: 34%;
+            top: 7%;
+        }
+
+        .title {
+            float: none;
+            position: absolute;
+            left: 150px;
+            top: 20px;
+        }
+
+        .button {
+            width: 50px;
+            height: 40px;
+            position: absolute;
+            top: 25px;
+        }
+
+        .divider {
+            width: 1500px;
+            height: 50px;
+            position: absolute;
+            top: 90px;
+            left: 15px;
+            z-index: -1;
+        }
+
+        .dottedBox {
+            border: 2px dotted;
+            padding: 20px;
+            margin: 20px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .feedbackButton {
+            height: 40px; 
+            background-color: yellowgreen;
+            align-items: center;
+            justify-content: center; 
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklistItem {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .checklistItem input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+
+        <!-- Left Side-->
+        <div class="leftHeader">
+            <!-- Website Logo -->
+            <img src="images/cookBook.png" style="width: 90px; height: 90px;" />
+
+            <!-- Website name -->
+            <h1 class="title" style="font-family:Broadway;">Online Recipes!</h1>
+        </div>
+
+
+
+        <!-- Right side -->
+        <!-- Login & Favorites button -->
+        <div class="button">
+            <a href="loginPage.html">
+                <img src="images/userIcon.jpg" class="button" style="left: 1350px;" />
+            </a>
+            <a href="favoritesPage.html">
+                <img src="images/favoritesIcon.png" class="button" style="left: 1400px;" />
+            </a>
+        </div>
+
+        <!-- Center -->
+        <div>
+            <!-- Search Bar -->
+            <input type="text" placeholder="Find a recipe you like..." class="searchbar" />
+            <div>
+                <!-- Top Divider -->
+                <img src="images/divider.jpeg" class="divider" style="height: 20px; top: 5px;" />
+
+                <!-- Bottom Divider -->
+                <img src="images/divider.jpeg" class="divider" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav Bar -->
+    <div class="navbar">
+        <a href="homePage.html">Home</a>
+        <a href="trendingPage.html">Trending</a>
+        <a href="ingredientsPage.html">My Ingredients</a>
+        <a href="postNewRecipePage.html">Post Recipe</a>
+    </div>
+    <br />
+
+    <!-- Recipe -->
+    <div id="recipe-container">
+        <h1 id="recipeTitle"></h1>
+        <img id="recipePhoto" alt="Recipe Photo" />
+        <h2>General Info</h2>
+        <div class="dottedBox" id="generalInfo"></div>
+        <h2>Ingredients</h2>
+        <ul id="ingredientsList"></ul>
+        <h2>Steps</h2>
+        <ul id="stepsList" class="checklist"></ul>
+        <h2>Nutrition Info</h2>
+        <div class="dottedBox" id="nutritionList"></div>
+        <h2>Like the Recipe?</h2>
+        <button class="feedbackButton" onclick="goToFeedbackPage()">Send Feedback!</button>
+    </div>
+
+    <!-- Scripting -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const recipe = {
+                title: "Layered Rainbow Jello",
+                photo: "images/butteredNoodle.webp",
+                generalInfo: ["Prep Time: 30 Mins", "Cook Time: 6 Hrs", 
+                              "Total Time: 6.5 Mins", "Servings: 16"],
+
+                ingredients: ["16 ounce package of fettuccine noodles", 
+                              "6 tablespoons of Unsalted Butter, cut into pieces", 
+                              "1/3 cup of grated Parmesan Cheese (optional)",
+                              "Salt", "Pepper"],
+
+                steps: ["Fill a large pot with lightly salted water and bring to a boil",
+                        "Stir in fettuccine, bring back to a boil, and cook pasta over medium heat for 8-10 minutes",
+                        "Drain and return pasta to pot. Mix butter, Parmesan cheese, salt, and pepper into pasta until evenly combined.", 
+                        "Serve and enjoy!"],
+
+                nutritionInfo: ["15 Calories", "0g Fat", "5g Carbs", "5g Protein"],
+            };
+
+            console.log("Recipe object:", recipe);
+
+            document.getElementById('recipeTitle').textContent = recipe.title;
+            document.getElementById('recipePhoto').src = recipe.photo;
+
+            const generalInfoList = document.getElementById('generalInfo');
+                recipe.generalInfo.forEach(infoPiece => {
+                const li = document.createElement('li');
+                li.textContent = infoPiece;
+                generalInfoList.appendChild(li);
+            });
+
+            const ingredientsList = document.getElementById('ingredientsList');
+                recipe.ingredients.forEach(ingredient => {
+                console.log("Ingredient: ", ingredient);
+                const li = document.createElement('li');
+                li.textContent = ingredient;
+                ingredientsList.appendChild(li);
+                console.log(ingredientsList);
+            });
+
+            const stepsList = document.getElementById('stepsList');
+             recipe.steps.forEach(step => {
+                let li = document.createElement('li');
+                li.className = 'checklistItem';
+
+                let checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+
+                let label = document.createElement('label');
+                label.textContent = step;
+
+                li.appendChild(checkbox);
+                li.appendChild(label);
+                stepsList.appendChild(li);
+            });
+
+            const nutritionList = document.getElementById('nutritionList');
+                recipe.nutritionInfo.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact; 
+                nutritionList.appendChild(li);
+            });
+});
+
+function goToFeedbackPage(){
+    window.location.href = 'feedbackPage.html';
+}
+    </script>
+</body>
+</html>
