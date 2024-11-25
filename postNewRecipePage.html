@@ -21,7 +21,7 @@
         .navbar {
             float: none;
             position: absolute;
-            top: 20%;
+            top: 12%;
             left: 35%;
             border: solid;
             border-color: gainsboro;
@@ -52,12 +52,33 @@
             margin: 0;
             padding: 0;
         }
+	
+	label {
+            font-size: 20px;    
+	}
 
         .center {
             float: none;
             position: absolute;
             left: 35%;
         }
+        
+	#recipe-container {
+            background: white; 
+            padding: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 40px auto 0; 
+        }
+
+	#output {
+            width: 100%;
+	    height: 500px;
+	    padding: 10px;
+	    padding-left: 0px;
+	    float: left;
+	}
 
         .searchbar {
             float: none;
@@ -74,6 +95,13 @@
             left: 150px;
             top: 20px;
         }
+
+	textarea { 
+	    width: 100%;
+	    height: 50%;
+	    object-fit: scale-down;
+	    resize: none;
+	}
 
         .button {
             width: 50px;
@@ -139,10 +167,12 @@
         <a href="ingredientsPage.html">My Ingredients</a>
         <a class="active">Post Recipe</a>
     </div>
+    <br>
 
-    <h1>Post New Recipe Page!</h1>
+    <h1>Post a New Recipe</h1>
     <!-- Start code here -->
-
+    
+    <div id="recipe-container">
     <form action="/action_page.php">
 	<!-- Recipe Name -->
         <label for="recipeName">Recipe name:</label>
@@ -150,9 +180,10 @@
 
 	<!-- Short Description -->
         <label for="shortDesc">Short description of recipe:</label>
-	<textarea type="text" id="shortDesc" name="shortDesc" rows="14" cols="10" wrap="soft"></textarea><br><br>
+	<textarea type="text" id="shortDesc" name="shortDesc" rows="14" cols="5" wrap="soft"></textarea><br><br>
 
 	<!-- Image Upload -->
+	<label for="imageUpload">Upload image of recipe (optional)</label>
         <input type="file" accept="image/*" onchange="loadFile(event)">
         <img id="output"/>
         <script>
@@ -172,6 +203,7 @@
 
 	<label for="cookTime">Cook Time:</label>
 	<input type="text" id="cookTime" name="cookTime">
+	<br>
 
 	<label for="totalTime">Total Time:</label>
 	<input type="text" id="totalTime" name="totalTime">
@@ -197,6 +229,7 @@
 
 	<label for="fat">Fat:</label>
 	<input type="text" id="fat" name="fat">
+	<br>
 
 	<label for="carbs">Carbs:</label>
 	<input type="text" id="carbs" name="carbs">
@@ -207,13 +240,14 @@
 
 
     </form>
+    </div>
    
     <!-- Code for adding and removing ingredients from the list -->
     <script>
         function add() {
 	    var ing = document.getElementById("ingredients").value;
 
-	    var newIngredient = document.createTextNode(ing);
+	    var newIngredient = document.createTextNode(ing + "	");
 	    var li = document.createElement("LI");
             
 	    var removeButton = document.createElement("BUTTON");
