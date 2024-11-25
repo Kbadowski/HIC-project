@@ -142,5 +142,89 @@
 
     <h1>Post New Recipe Page!</h1>
     <!-- Start code here -->
+
+    <form action="/action_page.php">
+	<!-- Recipe Name -->
+        <label for="recipeName">Recipe name:</label>
+        <input type="text" id="recipeName" name="recipeName"><br><br>
+
+	<!-- Short Description -->
+        <label for="shortDesc">Short description of recipe:</label>
+	<textarea type="text" id="shortDesc" name="shortDesc" rows="14" cols="10" wrap="soft"></textarea><br><br>
+
+	<!-- Image Upload -->
+        <input type="file" accept="image/*" onchange="loadFile(event)">
+        <img id="output"/>
+        <script>
+            var loadFile = function(event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+            };
+        </script>
+	<br><br>
+	
+	<!-- Details of recipe -->
+	<label for="prepTime">Prep Time:</label>
+	<input type="text" id="prepTime" name="prepTime">
+
+	<label for="cookTime">Cook Time:</label>
+	<input type="text" id="cookTime" name="cookTime">
+
+	<label for="totalTime">Total Time:</label>
+	<input type="text" id="totalTime" name="totalTime">
+
+	<label for="servings">Servings:</label>
+	<input type="text" id="servings" name="servings">
+	<br><br>
+
+        <!-- Ingredients section -->
+	<label for="ingredients">Enter ingredients for recipe:</label>
+	<input type="text" id="ingredients" name="ingredients"></input>
+	<button onclick="add()" type=button>Add</button>
+
+	<ul id="iList"></ul>
+        
+	<!-- Steps -->
+	<label for="steps">Steps for making the recipe:</label>
+	<textarea type="text" id="steps" name="steps" rows="14" cols="10" wrap="soft"></textarea><br><br>
+
+	<!-- Food calories and such -->
+	<label for="calories">Calories:</label>
+	<input type="text" id="calories" name="calories">
+
+	<label for="fat">Fat:</label>
+	<input type="text" id="fat" name="fat">
+
+	<label for="carbs">Carbs:</label>
+	<input type="text" id="carbs" name="carbs">
+
+	<label for="protein">Protein:</label>
+	<input type="text" id="protein" name="protein">
+	<br><br>
+
+
+    </form>
+   
+    <!-- Code for adding and removing ingredients from the list -->
+    <script>
+        function add() {
+	    var ing = document.getElementById("ingredients").value;
+
+	    var newIngredient = document.createTextNode(ing);
+	    var li = document.createElement("LI");
+            
+	    var removeButton = document.createElement("BUTTON");
+	    removeButton.appendChild(document.createTextNode("Remove"));
+	    removeButton.type = "button"; removeButton.value = "Remove";
+	    removeButton.onclick = function() { removeButton.parentElement.remove(); }
+
+	    li.appendChild(newIngredient);
+	    li.appendChild(removeButton);
+	    document.getElementById("iList").appendChild(li);
+	}
+    </script>
 </body>
 </html>
