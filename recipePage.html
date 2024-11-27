@@ -281,19 +281,40 @@
                 li.textContent = fact; 
                 nutritionList.appendChild(li);
             });
+        
 });
+
+    document.getElementById('favoriteButton').addEventListener('click', function () {
+        const recipe = {
+            title: "Buttered Noodles",
+            photo: "images/butteredNoodle.webp",
+            link: window.location.href, // Link back to the recipe
+        };
+
+        // Retrieve favorites from localStorage or initialize an empty array
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const isFavorite = favorites.some(fav => fav.title === recipe.title);
+
+        if (!isFavorite) {
+            // Add recipe to favorites
+            favorites.push(recipe);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            this.textContent = "Remove From Favorites";
+            
+        } else {
+            // Remove recipe from favorites
+            favorites = favorites.filter(fav => fav.title !== recipe.title);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            this.textContent = "Add Recipe To Favorites";
+           
+        }
+    });
+
 
 function goToFeedbackPage(){
     window.location.href = 'feedbackPage.html';
         }
-        document.getElementById('favoriteButton').addEventListener('click', function () {
-            if (this.textContent == "Add Recipe To Favorites") {
-                this.textContent = "Remove From Favorites";
-            }
-            else {
-                this.textContent = "Add Recipe To Favorites";
-            }
-        });
+        
      
     </script>
 </body>
