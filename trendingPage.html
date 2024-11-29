@@ -1,308 +1,323 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Mini Recipe Book</title>
     <style>
+      .header {
+        float: none;
+        padding: 10px;
+        height: 100px;
+        width: 1500px;
+      }
 
-        .header {
-            float: none;
-            padding: 10px;
-            height: 100px;
-            width: 1500px;
-        }
+      .leftHeader {
+        float: left;
+        left: auto;
+      }
 
-        .leftHeader {
-            float: left;
-            left: auto;
-        }
+      .navbar {
+        float: none;
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        border: solid;
+        border-color: gainsboro;
+      }
 
-        .navbar {
-            float: none;
-            position: absolute;
-            top: 20%;
-            left: 35%;
-            border: solid;
-            border-color: gainsboro;
-        }
+      .navbar a {
+        float: left;
+        display: block;
+        color: coral;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        padding: 14px 20px;
+      }
 
-            .navbar a {
-                float: left;
-                display: block;
-                color: coral;
-                text-align: center;
-                text-decoration: none;
-                font-size: 17px;
-                padding: 14px 20px;
-            }
+      .navbar a:hover {
+        background-color: lightpink;
+        color: black;
+      }
 
-                .navbar a:hover {
-                    background-color: lightpink;
-                    color: black;
-                }
+      .navbar a.active {
+        background-color: darksalmon;
+        color: black;
+      }
 
-                .navbar a.active {
-                    background-color: darksalmon;
-                    color: black;
-                }
+      body {
+        font-family: Arial;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: Arial;
-            margin: 0;
-            padding: 0;
-        }
+      .center {
+        float: none;
+        position: absolute;
+        left: 35%;
+      }
 
-        .center {
-            float: none;
-            position: absolute;
-            left: 35%;
-        }
+      .searchbar {
+        float: none;
+        position: absolute;
+        width: 500px;
+        height: 25px;
+        left: 34%;
+        top: 7%;
+      }
 
-        .searchbar {
-            float: none;
-            position: absolute;
-            width: 500px;
-            height: 25px;
-            left: 34%;
-            top: 7%;
-        }
+      .title {
+        float: none;
+        position: absolute;
+        left: 150px;
+        top: 20px;
+      }
 
-        .title {
-            float: none;
-            position: absolute;
-            left: 150px;
-            top: 20px;
-        }
+      .button {
+        width: 50px;
+        height: 40px;
+        position: absolute;
+        top: 25px;
+      }
 
-        .button {
-            width: 50px;
-            height: 40px;
-            position: absolute;
-            top: 25px;
-        }
+      .divider {
+        width: 1500px;
+        height: 50px;
+        position: absolute;
+        top: 90px;
+        left: 15px;
+        z-index: -1;
+      }
 
-        .divider {
-            width: 1500px;
-            height: 50px;
-            position: absolute;
-            top: 90px;
-            left: 15px;
-            z-index: -1;
-        }
-
-        .recipe-section {
+      .recipe-section {
         display: grid;
         grid-template-columns: 2fr 3fr;
         gap: 20px;
         margin-bottom: 40px;
         margin: 0 auto;
         max-width: calc(100% - 2in);
-        }
+      }
 
-        .recipe-item {
+      .recipe-item {
         display: grid;
         grid-template-columns: 1fr 2fr;
         align-items: center;
         gap: 20px;
-        }
+      }
 
-        .recipe-item img {
+      .recipe-item img {
         width: 100%;
         height: auto;
         border: 1px solid #ccc;
         border-radius: 5px;
-        }
+      }
 
-        .recipe-info {
+      .recipe-info {
         display: flex;
         flex-direction: column;
-        }
+      }
 
-        .recipe-info h2 {
+      .recipe-info h2 {
         margin: 0;
         font-size: 1.5em;
-        }
+      }
 
-        .trending {
+      .trending {
         color: coral;
         font-weight: bold;
         margin-top: 5px;
-        }
+      }
 
-        .stars {
+      .stars {
         display: flex;
         gap: 5px;
-        }
+      }
 
-        .stars span {
+      .stars span {
         color: coral;
         font-size: 1.2em;
-        }
+      }
 
-        .stars span.grey {
+      .stars span.grey {
         color: lightgray;
-        }
+      }
 
-        .grid-row {
+      .grid-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
         margin: 0 auto;
         max-width: calc(100% - 2in);
         margin-top: 50px;
-        }
-
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <div class="header">
+      <!-- Left Side-->
+      <div class="leftHeader">
+        <!-- Website Logo -->
+        <img src="images/cookBook.png" style="width: 90px; height: 90px" />
 
-        <!-- Left Side-->
-        <div class="leftHeader">
-            <!-- Website Logo -->
-            <img src="c:\Users\klric\Downloads\cookBook.png" style="width: 90px; height: 90px;" />
+        <!-- Website name -->
+        <h1 class="title" style="font-family: Broadway">Online Recipes!</h1>
+      </div>
 
-            <!-- Website name -->
-            <h1 class="title" style="font-family:Broadway;">Online Recipes!</h1>
-        </div>
+      <!-- Right side -->
+      <!-- Login & Favorites button -->
+      <div class="button">
+        <a href="loginPage.html">
+          <img src="images/userIcon.jpg" class="button" style="left: 1350px" />
+        </a>
+        <a href="favoritesPage.html">
+          <img
+            src="images/favoritesIcon.png"
+            class="button"
+            style="left: 1400px"
+          />
+        </a>
+      </div>
 
-
-
-        <!-- Right side -->
-        <!-- Login & Favorites button -->
-        <div class="button">
-            <a href="loginPage.html">
-                <img src="c:\Users\klric\Downloads\userIcon.jpg" class="button" style="left: 1350px;" />
-            </a>
-            <a href="favoritesPage.html">
-                <img src="c:\Users\klric\Downloads\favoritesIcon.png" class="button" style="left: 1400px;" />
-            </a>
-        </div>
-
-        <!-- Center -->
+      <!-- Center -->
+      <div>
+        <!-- Search Bar -->
+        <input
+          type="text"
+          placeholder="Find a recipe you like..."
+          class="searchbar"
+        />
         <div>
-            <!-- Search Bar -->
-            <input type="text" placeholder="Find a recipe you like..." class="searchbar" />
-            <div>
-                <!-- Top Divider -->
-                <img src="c:\Users\klric\Downloads\divider.jpeg" class="divider" style="height: 20px; top: 5px;" />
+          <!-- Top Divider -->
+          <img
+            src="images/divider.jpeg"
+            class="divider"
+            style="height: 20px; top: 5px"
+          />
 
-                <!-- Bottom Divider -->
-                <img src="c:\Users\klric\Downloads\divider.jpeg" class="divider" />
-            </div>
+          <!-- Bottom Divider -->
+          <img src="images/divider.jpeg" class="divider" />
         </div>
+      </div>
     </div>
 
     <!-- Nav Bar -->
     <div class="navbar">
-        <a href="homePage.html">Home</a>
-        <a class="active">Trending</a>
-        <a href="ingredientsPage.html">My Ingredients</a>
-        <a href="postNewRecipePage.html">Post Recipe</a>
+      <a href="homePage.html">Home</a>
+      <a class="active">Trending</a>
+      <a href="ingredientsPage.html">My Ingredients</a>
+      <a href="postNewRecipePage.html">Post Recipe</a>
     </div>
 
-    <h1 align="center" style="margin-top: 100px;">Deck the halls with these trending recipes!</h1>
+    <h1 align="center" style="margin-top: 100px">
+      Deck the halls with these trending recipes!
+    </h1>
 
     <!-- Start code here -->
 
     <!-- #1 trending recipe -->
-  <div class="recipe-section">
-    <div style="margin-left: auto; margin-right: 0;">
-      <a href="recipePage2.html">
-      <img src="c:\Users\klric\Downloads\jello.jpg" style="width: 180px; height: 180px;">
-      </a>
-    </div>
-    <div class="recipe-info">
-      <a href="recipePage2.html" style="text-decoration: none; color: black;">
-      <h2>Layered Rainbow Jello</h2>
-      </a>
-      <span class="trending">#1 in Trending</span>
-      <p
-        style="margin-right: 1in">
-        Looking for the perfect finger food for parties? Layered rainbow jello is a total crowd-pleaser and it’s fun and easy to make. To get into the Christmas spirit, alternate layers of lime jello with cherry, raspberry, or strawberry jello, and maybe even a layer of pink watermelon jello.
-      </p>
-      <div class="stars">
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span>★</span>
-        <span class="grey">★</span>
+    <div class="recipe-section">
+      <div style="margin-left: auto; margin-right: 0">
+        <a href="recipePage2.html">
+          <img src="images/jello.jpg" style="width: 180px; height: 180px" />
+        </a>
+      </div>
+      <div class="recipe-info">
+        <a href="recipePage2.html" style="text-decoration: none; color: black">
+          <h2>Layered Rainbow Jello</h2>
+        </a>
+        <span class="trending">#1 in Trending</span>
+        <p style="margin-right: 1in">
+          Looking for the perfect finger food for parties? Layered rainbow jello
+          is a total crowd-pleaser and it’s fun and easy to make. To get into
+          the Christmas spirit, alternate layers of lime jello with cherry,
+          raspberry, or strawberry jello, and maybe even a layer of pink
+          watermelon jello.
+        </p>
+        <div class="stars">
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span>★</span>
+          <span class="grey">★</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Other recipes -->
-  <div class="grid-row">
-    <div class="recipe-item">
-      <a href="recipePage.html">
-      <img src="c:\Users\klric\Downloads\cinnamon.jpg" style="width: 120px; height: 120px;">
-      </a>
-      <div class="recipe-info">
-        <a href="recipePage.html" style="text-decoration: none; color: black;">
-        <h3>Homemade Cinnamon Rolls</h3>
+    <!-- Other recipes -->
+    <div class="grid-row">
+      <div class="recipe-item">
+        <a href="recipePage.html">
+          <img src="images/cinnamon.jpg" style="width: 120px; height: 120px" />
         </a>
-        <div class="stars">
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span class="grey">★</span>
+        <div class="recipe-info">
+          <a href="recipePage.html" style="text-decoration: none; color: black">
+            <h3>Homemade Cinnamon Rolls</h3>
+          </a>
+          <div class="stars">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span class="grey">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-item">
+        <a href="recipePage.html">
+          <img
+            src="images/gingerbread.jpg"
+            style="width: 120px; height: 120px"
+          />
+        </a>
+        <div class="recipe-info">
+          <a href="recipePage.html" style="text-decoration: none; color: black">
+            <h3>Soft Gingerbread Cookies</h3>
+          </a>
+          <div class="stars">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span class="grey">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-item">
+        <a href="recipePage.html">
+          <img src="images/meatballs.jpg" style="width: 120px; height: 120px" />
+        </a>
+        <div class="recipe-info">
+          <a href="recipePage.html" style="text-decoration: none; color: black">
+            <h3>Swedish Meatballs</h3>
+          </a>
+          <div class="stars">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span class="grey">★</span>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-item">
+        <a href="recipePage.html">
+          <img src="images/casserole.jpg" style="width: 120px; height: 120px" />
+        </a>
+        <div class="recipe-info">
+          <a href="recipePage.html" style="text-decoration: none; color: black">
+            <h3>Green Bean Casserole</h3>
+          </a>
+          <div class="stars">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span class="grey">★</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="recipe-item">
-      <a href="recipePage.html">
-      <img src="c:\Users\klric\Downloads\gingerbread.jpg" style="width: 120px; height: 120px;">
-      </a>
-      <div class="recipe-info">
-        <a href="recipePage.html" style="text-decoration: none; color: black;">
-        <h3>Soft Gingerbread Cookies</h3>
-        </a>
-        <div class="stars">
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span class="grey">★</span>
-        </div>
-      </div>
-    </div>
-    <div class="recipe-item">
-      <a href="recipePage.html">
-      <img src="c:\Users\klric\Downloads\meatballs.jpg" style="width: 120px; height: 120px;">
-      </a>
-      <div class="recipe-info">
-        <a href="recipePage.html" style="text-decoration: none; color: black;">
-        <h3>Swedish Meatballs</h3>
-        </a>
-        <div class="stars">
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span class="grey">★</span>
-        </div>
-      </div>
-    </div>
-    <div class="recipe-item">
-      <a href="recipePage.html">
-      <img src="c:\Users\klric\Downloads\casserole.jpg" style="width: 120px; height: 120px;">
-      </a>
-      <div class="recipe-info">
-        <a href="recipePage.html" style="text-decoration: none; color: black;">
-        <h3>Green Bean Casserole</h3>
-        </a>
-        <div class="stars">
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span>★</span>
-          <span class="grey">★</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
