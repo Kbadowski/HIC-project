@@ -1,147 +1,242 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Mini Recipe Book</title>
     <style>
+      .header {
+        float: none;
+        padding: 10px;
+        height: 100px;
+        width: 1500px;
+      }
 
-        .header {
-            float: none;
-            padding: 10px;
-            height: 100px;
-            width: 1500px;
-        }
+      .leftHeader {
+        float: left;
+        left: auto;
+      }
 
-        .leftHeader {
-            float: left;
-            left: auto;
-        }
+      .navbar {
+        float: none;
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        border: solid;
+        border-color: gainsboro;
+      }
 
-        .navbar {
-            float: none;
-            position: absolute;
-            top: 20%;
-            left: 35%;
-            border: solid;
-            border-color: gainsboro;
-        }
+      .navbar a {
+        float: left;
+        display: block;
+        color: coral;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        padding: 14px 20px;
+      }
 
-            .navbar a {
-                float: left;
-                display: block;
-                color: coral;
-                text-align: center;
-                text-decoration: none;
-                font-size: 17px;
-                padding: 14px 20px;
-            }
+      .navbar a:hover {
+        background-color: lightpink;
+        color: black;
+      }
 
-                .navbar a:hover {
-                    background-color: lightpink;
-                    color: black;
-                }
+      .navbar a.active {
+        background-color: darksalmon;
+        color: black;
+      }
 
-                .navbar a.active {
-                    background-color: darksalmon;
-                    color: black;
-                }
+      body {
+        font-family: Arial;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: Arial;
-            margin: 0;
-            padding: 0;
-        }
+      .center {
+        float: none;
+        position: absolute;
+        left: 35%;
+      }
 
-        .center {
-            float: none;
-            position: absolute;
-            left: 35%;
-        }
+      .searchbar {
+        float: none;
+        position: absolute;
+        width: 500px;
+        height: 25px;
+        left: 34%;
+        top: 7%;
+      }
 
-        .searchbar {
-            float: none;
-            position: absolute;
-            width: 500px;
-            height: 25px;
-            left: 34%;
-            top: 7%;
-        }
+      .title {
+        float: none;
+        position: absolute;
+        left: 150px;
+        top: 20px;
+      }
 
-        .title {
-            float: none;
-            position: absolute;
-            left: 150px;
-            top: 20px;
-        }
+      .button {
+        width: 50px;
+        height: 40px;
+        position: absolute;
+        top: 25px;
+      }
 
-        .button {
-            width: 50px;
-            height: 40px;
-            position: absolute;
-            top: 25px;
-        }
+      .divider {
+        width: 1500px;
+        height: 50px;
+        position: absolute;
+        top: 90px;
+        left: 15px;
+        z-index: -1;
+      }
 
-        .divider {
-            width: 1500px;
-            height: 50px;
-            position: absolute;
-            top: 90px;
-            left: 15px;
-            z-index: -1;
-        }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .search-section {
+        margin-bottom: 20px;
+      }
+      .search-section input {
+        padding: 10px;
+        width: 60%;
+        margin-top: 100px;
+        margin-right: 10px;
+      }
+      .ingredients-list {
+        margin: 10px 0;
+        font-size: 1rem;
+        color: #555;
+      }
+      .recipes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .recipe-box {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        padding: 15px;
+        width: 45%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .recipe-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .recipe-box h3 {
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+      .star-rating {
+        color: gold;
+        font-size: 1rem;
+      }
+      .match-info {
+        font-size: 0.9rem;
+        color: #333;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <div class="header">
+      <!-- Left Side-->
+      <div class="leftHeader">
+        <!-- Website Logo -->
+        <img src="images/cookBook.png" style="width: 90px; height: 90px" />
 
-        <!-- Left Side-->
-        <div class="leftHeader">
-            <!-- Website Logo -->
-            <img src="images/cookBook.png" style="width: 90px; height: 90px;" />
+        <!-- Website name -->
+        <h1 class="title" style="font-family: Broadway">Online Recipes!</h1>
+      </div>
 
-            <!-- Website name -->
-            <h1 class="title" style="font-family:Broadway;">Online Recipes!</h1>
-        </div>
+      <!-- Right side -->
+      <!-- Login & Favorites button -->
+      <div class="button">
+        <a href="loginPage.html">
+          <img src="images/userIcon.jpg" class="button" style="left: 1350px" />
+        </a>
+        <a href="favoritesPage.html">
+          <img
+            src="images/favoritesIcon.png"
+            class="button"
+            style="left: 1400px"
+          />
+        </a>
+      </div>
 
-
-
-        <!-- Right side -->
-        <!-- Login & Favorites button -->
-        <div class="button">
-            <a href="loginPage.html">
-                <img src="images/userIcon.jpg" class="button" style="left: 1350px;" />
-            </a>
-            <a href="favoritesPage.html">
-                <img src="images/favoritesIcon.png" class="button" style="left: 1400px;" />
-            </a>
-        </div>
-
-        <!-- Center -->
+      <!-- Center -->
+      <div>
+        <!-- Search Bar -->
+        <input
+          type="text"
+          placeholder="Find a recipe you like..."
+          class="searchbar"
+        />
         <div>
-            <!-- Search Bar -->
-            <input type="text" placeholder="Find a recipe you like..." class="searchbar" />
-            <div>
-                <!-- Top Divider -->
-                <img src="images/divider.jpeg" class="divider" style="height: 20px; top: 5px;" />
+          <!-- Top Divider -->
+          <img
+            src="images/divider.jpeg"
+            class="divider"
+            style="height: 20px; top: 5px"
+          />
 
-                <!-- Bottom Divider -->
-                <img src="images/divider.jpeg" class="divider" />
-            </div>
+          <!-- Bottom Divider -->
+          <img src="images/divider.jpeg" class="divider" />
         </div>
+      </div>
     </div>
 
     <!-- Nav Bar -->
     <div class="navbar">
-        <a href="homePage.html">Home</a>
-        <a href="trendingPage.html">Trending</a>
-        <a class="active">My Ingredients</a>
-        <a href="postNewRecipePage.html">Post Recipe</a>
+      <a href="homePage.html">Home</a>
+      <a href="trendingPage.html">Trending</a>
+      <a class="active">My Ingredients</a>
+      <a href="postNewRecipePage.html">Post Recipe</a>
     </div>
 
-    <h1>Ingredients Page!</h1>
-    <!-- Start code here -->
+    <div class="container">
+      <div class="search-section">
+        <input type="text" placeholder="Enter an ingredient you have..." />
+        <button>Search</button>
+        <div class="ingredients-list">
+          Ingredients entered: <em>Tomato, Garlic</em>
+        </div>
+      </div>
 
-</body>
+      <div class="recipes">
+        <div class="recipe-box">
+          <a href="recipePage.html">
+            <img src="images/chicken_curry.jpg" alt="Chicken Curry" />
+            <h3>Chicken Curry</h3>
+            <div class="star-rating">★★★★★</div>
+            <p class="match-info">You have all ingredients</p>
+          </a>
+        </div>
+
+        <div class="recipe-box">
+          <a href="recipePage.html">
+            <img src="images/spaghetti.jpg" alt="Spaghetti Bolognese" />
+            <h3>Spaghetti Bolognese</h3>
+            <div class="star-rating">★★★★☆</div>
+            <p class="match-info">You have 3/5 ingredients</p>
+          </a>
+        </div>
+
+        <div class="recipe-box">
+          <a href="recipePage.html">
+            <img src="images/veg_stir_fry.jpg" alt="Vegetable Stir Fry" />
+            <h3>Vegetable Stir Fry</h3>
+            <div class="star-rating">★★★★☆</div>
+            <p class="match-info">You have 2/5 ingredients</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

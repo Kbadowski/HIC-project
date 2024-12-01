@@ -1,11 +1,10 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Recipe Book</title>
     <style>
-
         .header {
             float: none;
             padding: 10px;
@@ -90,10 +89,33 @@
             left: 15px;
             z-index: -1;
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .recipe-card {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        .recipe-card a {
+            text-decoration: none;
+            color: #007BFF;
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <div class="header">
 
         <!-- Left Side-->
@@ -140,7 +162,42 @@
         <a href="postNewRecipePage.html">Post Recipe</a>
     </div>
 
-    <h1>Favorites Page!</h1>
-    <!-- Start code here -->
+    <h1 align="center" style="margin-top: 100px;">Your Favorite Recipes!</h1>
+    <div id="favorites-container"></div>
+
+    <script>
+        function loadFavorites() {
+            const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+            const container = document.getElementById("favorites-container");
+            container.innerHTML = ""; // Clear container
+
+            if (favorites.length === 0) {
+                container.innerHTML = "<p>No favorite recipes yet!</p>";
+                return;
+            }
+
+            favorites.forEach(recipe => {
+                const recipeCard = document.createElement("div");
+                recipeCard.className = "recipe-card";
+
+                const img = document.createElement("img");
+                img.src = recipe.photo;
+                img.alt = recipe.title;
+
+                const title = document.createElement("a");
+                title.href = recipe.link;
+                title.textContent = recipe.title;
+
+                
+
+                recipeCard.appendChild(img);
+                recipeCard.appendChild(title);
+              
+                container.appendChild(recipeCard);
+            });
+        }
+        document.addEventListener("DOMContentLoaded", loadFavorites);
+    </script>
 </body>
 </html>
+

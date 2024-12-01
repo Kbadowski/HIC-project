@@ -123,13 +123,6 @@
             padding: 0;
         }
 
-        .feedbackButton {
-            height: 40px; 
-            background-color: yellowgreen;
-            align-items: center;
-            justify-content: center; 
-        }
-
         .checklist {
             list-style: none;
             padding: 0;
@@ -141,6 +134,18 @@
         }
         .checklistItem input[type="checkbox"] {
             margin-right: 10px;
+        }
+
+        .bottomButtons {
+            background-color: #ffcc00;
+            color: black; 
+            padding: 15px 32px; 
+            text-align: center;
+            display: inline-block;
+            font-size: 16px; 
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 4px; 
         }
     </style>
 </head>
@@ -207,7 +212,8 @@
         <h2>Nutrition Info</h2>
         <div class="dottedBox" id="nutritionList"></div>
         <h2>Like the Recipe?</h2>
-        <button class="feedbackButton" onclick="goToFeedbackPage()">Send Feedback!</button>
+        <button class="bottomButtons" style="background-color: yellowgreen" onclick="goToFeedbackPage()">Send Feedback!</button>
+        <button id="favoriteButton" class="bottomButtons">Add Recipe To Favorites</button>
     </div>
 
     <!-- Scripting -->
@@ -275,11 +281,41 @@
                 li.textContent = fact; 
                 nutritionList.appendChild(li);
             });
+        
 });
+
+    document.getElementById('favoriteButton').addEventListener('click', function () {
+        const recipe = {
+            title: "Buttered Noodles",
+            photo: "images/butteredNoodle.webp",
+            link: window.location.href, // Link back to the recipe
+        };
+
+        // Retrieve favorites from localStorage or initialize an empty array
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const isFavorite = favorites.some(fav => fav.title === recipe.title);
+
+        if (!isFavorite) {
+            // Add recipe to favorites
+            favorites.push(recipe);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            this.textContent = "Remove From Favorites";
+            
+        } else {
+            // Remove recipe from favorites
+            favorites = favorites.filter(fav => fav.title !== recipe.title);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            this.textContent = "Add Recipe To Favorites";
+           
+        }
+    });
+
 
 function goToFeedbackPage(){
     window.location.href = 'feedbackPage.html';
-}
+        }
+        
+     
     </script>
 </body>
 </html>
