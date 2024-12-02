@@ -17,6 +17,61 @@
             float: left;
             left: auto;
         }
+	
+	.review-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+	}
+
+	.homepage {
+            text-align: center;
+	}
+        
+        .review {
+            display: grid;
+	    grid-template-columns: auto auto;
+	    left: 33%;
+            justify-content: center;
+	    column-gap: 300px;
+	}
+
+	.recipe-grid {
+            display: grid;
+	    grid-template-columns: auto;
+	}
+        
+        .vert-grid{
+            display:grid;
+	    grid-template-columns: auto auto;
+	    justify-content: center;
+	    column-gap: 100px;
+	}
+
+	.review-item, .recipe-container {
+            background: white; 
+            padding: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: 40px auto 0; 
+        }
+
+        .stars {
+            #display: flex;
+            gap: 5px;
+        }
+
+        .stars span {
+            color: coral;
+            font-size: 1.2em;
+        }
+
+        .stars span.grey {
+            color: lightgray;
+	    margin-left: -5px;
+        }
 
         .navbar {
             float: none;
@@ -58,7 +113,7 @@
             position: absolute;
             left: 35%;
         }
-
+        
         .searchbar {
             float: none;
             position: absolute;
@@ -95,7 +150,7 @@
 <body>
     <!-- Header -->
     <div class="header">
-
+    
         <!-- Left Side-->
         <div class="leftHeader">
             <!-- Website Logo -->
@@ -142,6 +197,165 @@
 
     <h1>Home Page!</h1>
     <!-- Start code here -->
+    
+    <div class="homepage">
+        <h1>About:</h1>
+	<p>FILLER FILLER FILLER</p>
+
+	<!-- REVIEWS FOR WEBSITE ON HOMEPAGE -->
+
+	<h1>Reviews:</h1>
+        <div class="review">
+	    
+            <div class="review-item">
+               
+		<h2 style="display: inline;">Review 1</h2>
+                <div style="display:inline; margin-left: 10px"class="stars">
+                    <span>★★★★</span>
+            	    <span class="grey">★</span>
+	        </div>
+		<p style="text-align: left;">.....</p>
+                
+               
+            </div>
+          
+            <div class="review-item">
+               
+		<h2 style="display: inline;">Review 2</h2>
+                <div style="display:inline; margin-left: 10px"class="stars">
+                    <span>★★★★</span>
+            	    <span class="grey">★</span>
+	        </div>
+		<p style="text-align: left;">.....</p>
+                
+               
+            </div>
+
+            <div class="review-item">
+               
+		<h2 style="display: inline;">Review 3</h2>
+                <div style="display:inline; margin-left: 10px"class="stars">
+                    <span>★★★★</span>
+            	    <span class="grey">★</span>
+	        </div>
+		<p style="text-align: left;">.....</p>
+                
+               
+            </div>
+
+            <div class="review-item">
+               
+		<h2 style="display: inline;">Review 4</h2>
+                <div style="display:inline; margin-left: 10px"class="stars">
+                    <span>★★★★</span>
+            	    <span class="grey">★</span>
+	        </div>
+		<p style="text-align: left;">.....</p>
+                
+               
+            </div>
+	</div>
+
+	<!-- VERTICAL GRIDS OF RECIPES -->
+	<div class="vert-grid">
+        
+	    <div class="recipe-container">
+	    <h2>Trending</h2>
+	    <div class="recipe-grid">
+	        
+		<div class="recipe-container">
+	                       
+	            <h3>
+			<img src="images/cinnamon.jpg" style="width: 120px; height: 120px; float: left; margin-right: 50px;"/>
+			Homemade Cinnamon Rolls
+		    </h3>
+
+                    <div class="stars">
+                        <span>★★★★</span>
+            	        <span class="grey">★</span>
+	            </div>
+               
+                </div>
+		
+		<div class="recipe-container">
+	                       
+	            <h3>
+			<img src="images/casserole.jpg" style="width: 120px; height: 120px; float: left; margin-right: 50px;"/>
+			Green Bean Casserole
+		    </h3>
+
+                    <div class="stars">
+                        <span>★★★★</span>
+            	        <span class="grey">★</span>
+	            </div>
+               
+                </div>
+
+	    </div>
+	    </div>
+            
+
+
+	    <div class="recipe-container">
+	    <h2>Trending</h2>
+	    <div class="recipe-grid">
+	        
+		<div class="recipe-container">
+	                       
+	            <h3>
+			<img src="images/cinnamon.jpg" style="width: 120px; height: 120px; float: left; margin-right: 50px;"/>
+			Homemade Cinnamon Rolls
+		    </h3>
+
+                    <div class="stars">
+                        <span>★★★★</span>
+            	        <span class="grey">★</span>
+	            </div>
+               
+                </div>
+		
+		<div class="recipe-container">
+	                       
+	            <h3>
+			<img src="images/casserole.jpg" style="width: 120px; height: 120px; float: left; margin-right: 50px;"/>
+			Green Bean Casserole
+		    </h3>
+
+                    <div class="stars">
+                        <span>★★★★</span>
+            	        <span class="grey">★</span>
+	            </div>
+               
+                </div>
+
+	    </div>
+
+	</div>
+
+    </div>
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+<!-- WHOOPS
+ <div class="review-item">
+               
+	        <h2>
+			<img src="images/cinnamon.jpg" style="width: 120px; height: 120px; float: left; margin-right: 50px;"/>
+			Review 1
+		</h2>
+                <div class="stars">
+                    <span>★★★★</span>
+            	    <span class="grey">★</span>
+	        </div>
+               
+            </div>
+
+-->
